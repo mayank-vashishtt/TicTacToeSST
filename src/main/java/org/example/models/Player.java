@@ -14,17 +14,24 @@ public class Player {
         this.playerType = playerType;
     }
 
-    public Move makeMove(Board board){
-//        ask the use where they wanna place the symbol
+    public Move makeMove(Board board) {
+        //Ask the user where they want to place the symbol.
 
-        System.out.println("Enter the row number where you wanna make a move: ");
+        System.out.println("Please enter the row number where you want to make a move ?");
         int row = scanner.nextInt();
 
-        System.out.println("Enter the col number where you wanna make a move: ");
+        System.out.println("Please enter the col number where you want to make a move ?");
         int col = scanner.nextInt();
 
-        return new Move(new Cell(row,col), this);
+        return new Move(new Cell(row, col), this);
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public Symbol getSymbol() {
@@ -41,15 +48,5 @@ public class Player {
 
     public void setPlayerType(PlayerType playerType) {
         this.playerType = playerType;
-    }
-
-
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
     }
 }
