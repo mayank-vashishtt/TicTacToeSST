@@ -9,14 +9,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) throws InvalidMoveException {
-        System.out.println("Hello world!");
+        System.out.println("Hello audience, be ready for the TicTacToe match");
+        System.out.println();
+        System.out.println("Empty Board is here below ");
         Scanner scanner = new Scanner(System.in);
         GameController gameController = new GameController();
 
         int dimension = 3;
         List<Player> players = List.of(
                 new Player("Mayank", new Symbol('X'), PlayerType.HUMAN),
-                new Bot("Scaler", new Symbol('O'), PlayerType.BOT, BotDIfficultyLevel.EASY)
+                new Bot("EaseBot", new Symbol('O'), PlayerType.BOT, BotDIfficultyLevel.EASY)
         );
 
         Game game = gameController.startGame(dimension, players);
@@ -35,7 +37,7 @@ public class Main {
             System.out.println("Game DRAW");
         } else {
             gameController.printBoard(game);
-            System.out.println("Player " + gameController.getWinner(game).getName() + " is the winner");
+            System.out.println("Player " + gameController.getWinner(game).getName() + " is the winner, give a huge amount of applauds");
         }
     }
 }
